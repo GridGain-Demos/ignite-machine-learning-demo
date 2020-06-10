@@ -36,16 +36,8 @@ import com.gg.interactive.sg.RFModelInterface.*;
 
 
 /**
- * Example that demonstrates how to deploy distributed services in Ignite.
- * Distributed services are especially useful when deploying singletons on the ignite,
- * be that cluster-singleton, or per-node-singleton, etc...
- * <p>
- * To start remote nodes, you must run {@link ExampleNodeStartup} in another JVM
- * which will start node with {@code examples/config/example-ignite.xml} configuration.
- * <p>
- * NOTE:<br/>
- * Starting {@code ignite.sh} directly will not work, as distributed services
- * cannot be peer-deployed and classes must be on the classpath for every node.
+ * Orchestrator process that calls methods on Data Generation service node and Random Forest model node. Service
+ * Grid is used as a wrapper around a single instance of data service and single instance of Random forest model service
  */
 public class A0_Build_Model {
 	
@@ -87,8 +79,7 @@ public class A0_Build_Model {
     			try {
     				
     				// in this code we are only running a single node with Data Generator and RF model
-    				// in production need to have a cluster of multiple nodes for each server
-    					DataGeneratorInterface dgService = 
+     					DataGeneratorInterface dgService = 
     							ignite.services(ignite.cluster().forAttribute("nodelabel", "dataprovider")).serviceProxy(DataGeneratorInterface.class.getName(),
     									DataGeneratorInterface.class,
     									true);

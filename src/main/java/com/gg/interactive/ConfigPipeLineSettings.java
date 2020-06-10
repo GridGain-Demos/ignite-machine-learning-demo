@@ -37,8 +37,9 @@ import org.apache.ignite.ml.math.primitives.vector.impl.DenseVector;
 
 
 public class ConfigPipeLineSettings {
-    /**;
-     * Run example.
+    /**
+     * public static values can also be set directly from other ML pipeline orchestration processes
+     * also some of these can be set in Environment Variables or in the config/MLPLProperties.txt file
      */
 	
 	public static final boolean TEST_MODE = false;   // set to true to see vector assembly from model.predict()

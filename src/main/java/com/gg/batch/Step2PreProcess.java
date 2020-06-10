@@ -140,7 +140,7 @@ public class Step2PreProcess {
     {
     	double predictedValue = 0.0;
     	
-    	int featuresmetadatasize = // does this get garbage collected? FEATURES_META_DATA.size();   // number of cols with one-hots added
+    	int featuresmetadatasize = // total number of cols with 3 one-hots added
     			
     	DatasetBuilder.COL_COUNT + DatasetBuilder.CATEGORICAL_FEATURES.length - 1;
     	

@@ -56,10 +56,7 @@ public class Step3TrainRF {
      * Run example.
      */
 	
-	//public static  ModelsComposition RF_MODEL = null;
-	//public static  ModelsComposition RF_MODEL_1 = null;
 	
-
 	public static int MODEL_CURRENT_VERSION_NUMBER = 0;
 	public static int MODEL_VERSION_NUMBER_MAX = 10;
 	

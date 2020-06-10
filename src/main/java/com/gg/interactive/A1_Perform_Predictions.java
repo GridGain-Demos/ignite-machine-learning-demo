@@ -168,7 +168,7 @@ public class A1_Perform_Predictions {
 	        		xactioncache.put(key, new DenseVector(newSourceXaction));
 	        	
 	        		           		
-	           	//	if (ConfigPipeLineSettings.TEST_MODE)
+	           	if (ConfigPipeLineSettings.TEST_MODE)
 	           			ConfigPipeLineSettings.statusFileWriteMsg("Key: " + key + ", Actual/Predicted: {" 
 	           				+ ACTUALS.get(key) + " / " + PREDICTIONS.get(key)  + "}");
 	        	  }

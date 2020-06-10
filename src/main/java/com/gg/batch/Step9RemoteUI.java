@@ -33,7 +33,7 @@ import org.apache.ignite.client.ClientException;
 
 
 /**
- * Demonstrates how to use Ignite thin client for basic put/get cache operations.
+ * this thin client used to connect to local cluster or to cluster in Azure Kubernetes Services
  *
  */
 public class Step9RemoteUI {

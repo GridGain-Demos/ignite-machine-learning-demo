@@ -31,10 +31,8 @@ import org.apache.ignite.ml.math.primitives.vector.impl.DenseVector;
  */
 public interface RFModelInterface {
     /**
-     * Puts key-value pair into map.
-     *
-     * @param key Key.
-     * @param val Value.
+     * proxy to Random Forest model clients. Bridges between predict clients and RF MOdel state in the Random forest s
+     * service node
      */
 	
 	public 	int size ();

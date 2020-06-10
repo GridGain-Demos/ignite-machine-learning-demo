@@ -62,7 +62,7 @@ public class ConfigNodeClient {
     	
     	boolean fromFile = initialize();
     	
-    	// have to change this to 
+    	// have to change this to use bean name
     	IgniteConfiguration config1 = Ignition.loadSpringBean("config/ignite-client.xml", "ignite.cfg");
         
         return config1;

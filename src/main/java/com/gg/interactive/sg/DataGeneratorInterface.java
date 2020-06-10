@@ -27,15 +27,11 @@ import org.apache.ignite.ml.math.primitives.vector.Vector;
 import org.apache.ignite.ml.math.primitives.vector.impl.DenseVector;
 
 /**
- * Simple map service.
- */
+* proxy to Data Generator provider service
+*  
+*  */
 public interface DataGeneratorInterface {
-    /**
-     * Puts key-value pair into map.
-     *
-     * @param key Key.
-     * @param val Value.
-     */
+     
  
 	public 	int size ();
 	

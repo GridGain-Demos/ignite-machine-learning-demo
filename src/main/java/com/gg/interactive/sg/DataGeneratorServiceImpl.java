@@ -55,8 +55,7 @@ import it.unimi.dsi.fastutil.Arrays;
 
 
 /**
- * Simple service which utilizes Ignite cache as a mechanism to provide
- * distributed {@link DataGeneratorInterface} functionality.
+ * 
  */
 public class DataGeneratorServiceImpl implements Service, DataGeneratorInterface {
     /** Serial version UID. */

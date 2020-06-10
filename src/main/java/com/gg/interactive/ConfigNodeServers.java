@@ -37,7 +37,7 @@ public class ConfigNodeServers {
     	
     }
     
-    // used for Service Grid nodes 
+    // unused
     public static IgniteConfiguration getIgniteServiceNodeConfiguration (String parameters)
     {
     	
@@ -55,7 +55,7 @@ public class ConfigNodeServers {
     	
     	
     	
-    	// this config needs to be redirected if deployed to Kubernetes
+    	// unused - this config needs to be redirected if deployed to Kubernetes
     	IgniteConfiguration config1 = Ignition.loadSpringBean("config/ignite-server.xml", "igniteModelNode.cfg");
         
         return config1;

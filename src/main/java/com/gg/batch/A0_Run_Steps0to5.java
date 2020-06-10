@@ -21,9 +21,7 @@ import java.io.*;
 import com.gg.batch.ConfigPipeLineSettings.*;
 
 /**
- * Create a dataset
- * deploy to cloud AKS
- * train on the data set
+ * 
  */
 public class A0_Run_Steps0to5 {
     /** Run examples with default settings. */

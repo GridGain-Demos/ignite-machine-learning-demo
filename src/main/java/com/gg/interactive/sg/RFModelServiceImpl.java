@@ -80,8 +80,7 @@ import org.h2.store.Data;
 
 
 /**
- * Simple service which utilizes Ignite cache as a mechanism to provide
- * distributed {@link DataGeneratorInterface} functionality.
+ *  
  */
 public class RFModelServiceImpl implements Service, RFModelInterface {
     /** Serial version UID. */
