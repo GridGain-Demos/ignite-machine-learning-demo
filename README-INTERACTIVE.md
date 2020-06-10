@@ -45,7 +45,7 @@ mvn exec:java -Dexec.mainClass="com.gg.interactive.<java file>"
  5. A1_Perform_Predictions.java  -> makes calls on Model methods to predict outputs for new transactions; you will get a loop statement when running this that asks you to enter one of these inputs at the console command line:
  	a. enter to default to 10 new transactions
  	b. any number you want, say 100, to generate 100 new transactions
- 	c. "0" if you want to quit
+ 	c. "0" if you want to quit entering new transactions and have process continue on the accuracy and retrain logic
  	
  	
  6. once the transactions are run and predicted upon, the A1_Perform_Prediction.java runs a simple MAE (Mean absolute error) check and if this error exceeds the MAE you hard-coded, then it will send the new transaction cache is input to the RF Model to retrain.
