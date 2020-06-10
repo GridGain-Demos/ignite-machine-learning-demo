@@ -1,0 +1,14 @@
+# number of synthetic training data rows to be generated (if not loaded from CSV)
+ROWS=1212
+# leave CONFIG_FILE blank when in k8s and k8s will use another config from YAML file instead
+CONFIG_FILE=ignite-client.xml
+# train / test data split for model evaluation
+DATA_SPLIT=0.78
+# optional output directory for status and CSV output data files
+OUTPUT_DIR=
+# TEST_SERVER blank when you have external cache servers
+TEST_SERVER=1
+# if named, then overwrite mode, otherwise leave FILEPREFIX blank for new timestamp files
+FILEPREFIX=200608-5-23
+# <not implemented yet> if blank use generated data
+CSV_INPUT_FILE=
