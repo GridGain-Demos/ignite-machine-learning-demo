@@ -14,20 +14,14 @@ There are 2 packages:
 
 # PACKAGE 1: Overview of the org.gridgain.demo.interactive.* Package
 
-
-
-
-
 The code in this package runs the ML Pipeline in data generation and Model building steps in the background, and then when you get to the Predictive step will stop and ask you to enter in a number to use for "new" transactions that need to have predictive values assigned. For this first version of the demo it will simply save both the predicted and the "actual" (which in this case is just a hidden value already provided but will be ignored)
 
- # NOTE: this code produces a single large status file with all of the steps and timestamps saved. It will be overwritten each time you run this unless you change the file prefix in the [config/MLPLProperties.txt] file
+NOTE: this code will output a single large status file with all of the steps and timestamps saved. The file prefix can be specified in the [config/MLPLProperties.txt] file
 
 
 0. [ Step0RunTestCacheNode.java ] You manually start this node as an optional cache server node if you want to run inside your IDE for example. You need this if you do ont have cache servers in the cluster.
 
 1. [ Step1DataProviderNode.java ] You manually starts one instance (only one) to perform the data generation steps. No CSV files are output, just send the data to cache. No data generation will be performed until the applicable method is called on the contained ServiceGrid proxy for data generation services, when you run [A0_Build_Model.java]
-
-
 
 2. [ Step2RFModelNote.java ]This node is run just once to perform preprocessing and training on the training dataset, that will be performed on demand via the Data provider. No preprocessing or training will be performed until the applicable operations are called on the Service Grid proxy for Model services, when you run [A0_Build_Model.java]
 
@@ -35,7 +29,7 @@ The code in this package runs the ML Pipeline in data generation and Model build
 
 4. [A1_Perform_Predictions.java] When A0_build model has run and the model service is ready, now you run this to first get some new synthetic transactions (schema of the transactions is defined in the data provider service. 
 
-NOTE: THese are not real transactions coming from an actual client system, rather they are simulated, and have the same output as training data but have the labels "hidden" and ignored at first. The predicted values from the RandomForest model service and the now revealed actual values are saved together and used to calculate the predictive accuracy of the Random Forest model. If the accuracy does not meet the hard-coded MAE then an update on the model is performed with this "new" data
+NOTE: These are not real transactions coming from an actual client system, rather they are simulated, and have the same output as training data but have the labels "hidden" and ignored at first. The predicted values from the RandomForest model service and the now revealed actual values are saved together and used to calculate the predictive accuracy of the Random Forest model. If the accuracy does not meet the hard-coded MAE then an update on the model is performed with this "new" data
 
 
 # maven commands to clear out and restart:
@@ -46,7 +40,7 @@ mvn exec:java -Dexec.mainClass="org.gridgain.demo.interactive.<java file you wan
 
 # To run
 
-0. delete the {your file prefix}-interactive-status.txt file if you don't want to keep it growing with each run (it uses file append mode)
+0. Rename the {your file prefix}-interactive-status.txt file if you want to save the output separately for each different run. You may need to delete it to save space.
  
 1. Step0RunTestCacheNode.java  -> start the test cache server in IDE (one or more) if you don't have cache servers up already
 
