@@ -1,5 +1,9 @@
 # ignite-machine-learning-demo
-A set of examples demonstrating Ignite Machine Learning capabilities. There are 2 packages:
+A set of examples demonstrating Ignite Machine Learning capabilities. 
+
+Business use case: Claims data transactions (simulated to model "typical" healthcare payers input fields) each require an expected monetary value be calculated for each claims transaction, based on expected likelihood of obtaining reimbursement in a timely manner. For an example of how the predicted monetary value could be used, an example would be that the claims could be prioritized in a back end  claims adjustment workflow, so that the most valuable claims from a reimbursement view point could be procesed more quickly. In this way the maximum financial value could be obtained from the claims adjudication process. The simulated claims data which is generated (you can set the # of records to create benchmarking jobs that run on Apache Ignite clusters) makes use of a statistical regression algorithm in order to (A) simulate a Random Forest parallel preprocessing and training workload, and then (B) make use of the trained model to ascertain the expected value of new transactions.
+
+There are 2 packages:
 
 1. org.gridgain.demo.interactive.* - this package runs the ML model preprocess and training, using generated data. Then you run a second program that acts like an actual client transaction engine sending in new transactions that request predictions as outputs from the trained model, the latter which runs as a service and can be shared by multiple clients.  
 
@@ -10,7 +14,7 @@ A set of examples demonstrating Ignite Machine Learning capabilities. There are 
 
 # PACKAGE 1: Overview of the org.gridgain.demo.interactive.* Package
 
-Business use case: Claims data transactions (simulated to model "typical" healthcare payers input fields) each require an expected monetary value be calculated for each claims transaction, based on expected likelihood of obtaining reimbursement in a timely manner. For an example of how the predicted monetary value could be used, an example would be that the claims could be prioritized in a back end  claims adjustment workflow, so that the most valuable claims from a reimbursement view point could be procesed more quickly. In this way the maximum financial value could be obtained from the claims adjudication process. The simulated claims data which is generated (you can set the # of records to create benchmarking jobs that run on Apache Ignite clusters) makes use of a statistical regression algorithm in order to (A) simulate a Random Forest parallel preprocessing and training workload, and then (B) make use of the trained model to ascertain the expected value of new transactions.
+
 
 
 
@@ -65,9 +69,6 @@ mvn exec:java -Dexec.mainClass="org.gridgain.demo.interactive.<java file you wan
  6. once the transactions are run and predicted upon, the A1_Perform_Prediction.java runs a simple MAE (Mean absolute error) check and if this error exceeds the MAE you hard-coded, then it will send the new transaction cache is input to the RF Model to retrain.
 
 # PACKAGE 2: Overview of the  org.gridgain.demo.batch package
-
-Business use case: Claims data transactions (simulated to model "typical" healthcare payers input fields) each require an expected monetary value be calculated for each claims transaction, based on expected likelihood of obtaining reimbursement in a timely manner. For an example of how the predicted monetary value could be used, an example would be that the claims could be prioritized in a back end  claims adjustment workflow, so that the most valuable claims from a reimbursement view point could be procesed more quickly. In this way the maximum financial value could be obtained from the claims adjudication process. The simulated claims data which is generated (you can set the # of records to create benchmarking jobs that run on Apache Ignite clusters) makes use of a statistical regression algorithm in order to (A) simulate a Random Forest parallel preprocessing and training workload, and then (B) make use of the trained model to ascertain the expected value of new transactions.
-
 
 The code in this package runs the entire RandomForest pipeline in one straight-through process batch run. It performs these steps in order
 
