@@ -5,6 +5,8 @@ A set of examples demonstrating Ignite Machine Learning capabilities. There are 
 
 2. org.gridgain.demo.batch - this one runs the entire ML Pipeline as a single run from start (generating the data) to the finish (predicting some outputs for new transactions). 
 
+3. At the end of this README in the Configuration Details section there are some configuration options, for example to change the number or rows generated, or the data spit between train and test, that you can review once you are familiar with how to run the project.
+
 
 # PACKAGE 1: Overview of the org.gridgain.demo.interactive.* Package
 
