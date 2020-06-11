@@ -9,6 +9,6 @@ OUTPUT_DIR=
 # TEST_SERVER blank when you have external cache servers
 TEST_SERVER=1
 # if named, then overwrite mode, otherwise leave FILEPREFIX blank for new timestamp files
-FILEPREFIX=200610-12-40
+FILEPREFIX=200611-2-14pm
 # <not implemented yet> if blank use generated data
 CSV_INPUT_FILE=

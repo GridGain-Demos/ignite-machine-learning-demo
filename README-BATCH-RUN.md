@@ -1,7 +1,8 @@
 # Overview of the  [org.gridgain.demo.batch] package
 -------------------------
 
-Business Use case: CLaims data transactions (simulated to model "typical" healthcare payers input fields) each require a monetary value be calculated for each claims transaction so that those with the highest expected value (most likely to obtain desired financial reimbursement in a timely manner) can be prioritized in the workflow processing queue according to highest value to lowest value. The data generated makes use of a statistical regression algorithm in order to simulate large datasets being processed in parallel on the Apache Ignite cluster. 
+Business use case: Claims data transactions (simulated to model "typical" healthcare payers input fields) each require an expected monetary value be calculated for each claims transaction, based on expected likelihood of obtaining reimbursement in a timely manner. The claims are then prioritized in the claims adjustment workflow accordingly so that maximum financial value can be captured during the claims adjudication process. The data which is generated (you can set the # of records to create benchmarking jobs that run on Apache Ignite clusters) makes use of a statistical regression algorithm in order to (A) simulate a Random Forest parallel preprocessing and training workload, and then (B) make use of the trained model to ascertain the expected value of new transactions.
+
 
 The code in this package runs the entire RandomForest pipeline in one straight-through process batch run. It performs these steps in order
 
