@@ -20,16 +20,13 @@ There are 2 packages:
 
 The code in this package runs the ML Pipeline in data generation and Model building steps in the background, and then when you get to the Predictive step will stop and ask you to enter in a number to use for "new" transactions that need to have predictive values assigned. For this first version of the demo it will simply save both the predicted and the "actual" (which in this case is just a hidden value already provided but will be ignored)
 
-NOTE: See comments in org.gridgain.demo.batch programs for ML Pipeline configuration settings 
-
-NOTE: this code produces a single large status file with all of the steps and timestamps saved. It will be overwritten each time you run this unless you change the file prefix in the [<path>/config/MLPLProperties.txt] file
+ # NOTE: this code produces a single large status file with all of the steps and timestamps saved. It will be overwritten each time you run this unless you change the file prefix in the [<path>/config/MLPLProperties.txt] file
 
 
 0. [ Step0RunTestCacheNode.java ] You manually start this node as an optional cache server node if you want to run inside your IDE for example. You need this if you do ont have cache servers in the cluster.
 
 1. [ Step1DataProviderNode.java ] You manually starts one instance (only one) to perform the data generation steps. No CSV files are output, just send the data to cache. No data generation will be performed until the applicable method is called on the contained ServiceGrid proxy for data generation services, when you run [A0_Build_Model.java]
 
-NOTE: See comments in org.gridgain.demo.batch programs for ML Pipeline configuration settings 
 
 
 2. [ Step2RFModelNote.java ]This node is run just once to perform preprocessing and training on the training dataset, that will be performed on demand via the Data provider. No preprocessing or training will be performed until the applicable operations are called on the Service Grid proxy for Model services, when you run [A0_Build_Model.java]
