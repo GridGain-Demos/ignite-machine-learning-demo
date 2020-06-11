@@ -1,5 +1,8 @@
 # Overview of the com.gg.interactive.* Package
 
+Business Use case: Claims data transactions (simulated to model "typical" healthcare payers input fields) each require a monetary value be calculated for each claims transaction so that those with the highest expected value (most likely to obtain desired financial reimbursement in a timely manner) can be prioritized in the workflow processing queue according to highest value to lowest value. The data generated makes use of a statistical regression algorithm in order to simulate large datasets being processed in parallel on the Apache Ignite cluster. 
+
+
 The code in this package runs the ML Pipeline in data generation and Model building steps in the background, and then when you get to the Predictive step will stop and ask you to enter in a number to use for "new" transactions that need to have predictive values assigned. For this first version of the demo it will simply save both the predicted and the "actual" (which in this case is just a hidden value already provided but will be ignored)
 
 NOTE: See comments in org.gridgain.demo.batch programs for ML Pipeline configuration settings 
