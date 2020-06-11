@@ -1,4 +1,4 @@
-# Overview of the  [com.gg.batch] package
+# Overview of the  [org.gridgain.demo.batch] package
 -------------------------
 The code in this package runs the entire RandomForest pipeline in one straight-through process batch run. It performs these steps in order
 
@@ -19,18 +19,22 @@ NOTE: the same datagenerator is used to create the "live" transactions, so the l
 
 Maven commands to manually clear out and restart:
 ------
-	cd <path>\ml-demo-interactivek>    { directory with pom.xml}
+	cd <path>\ml-demo-interactive    { directory with pom.xml}
 	mvn clean install
-	mvn exec:java -Dexec.mainClass="com.gg.batch.A0_Run_Steps0to5.java
+	mvn exec:java -Dexec.mainClass="org.gridgain.demo.batch.A0_Run_Steps0to5.java
 
 How to run the steps
 -------------------
-	(1) programs in package "com.gg.batch" starting with name A0* are parent programs that call the individual pipeline steps.
+	(1) programs in package "org.gridgain.demo.batch" starting with name A0* are parent programs that call the individual pipeline steps.
 	
 
 	 	A0ExecSteps0_5.java 
 	 	-----------------
-	 	calls Steps0-5 to start cache server, generate synthetic data, 		preprocess, train, then do  predictions
+	 	calls Steps0-5 to start cache server, generate synthetic data, preprocess, train, then do  predictions
+	
+		 A0ExecSteps1_5.java 
+	 	-----------------
+	 	assumes you have already started cache cluster, then generate does synthetic data, preprocess, train, then do  predictions
 	
 	
 
@@ -39,7 +43,7 @@ How to run the steps
 
 		Step9RemoteUI.java
 		-----------------------
-		optional thin client connect to cache when done to see # entries
+		optional thin client connect to cache when done to see # entries. Edit if you want to connect remotely to Kubernetes cluster, right now localhost
 
 	(3) Step0RunTestCacheNode  is the test server
 
@@ -47,7 +51,7 @@ How to run the steps
 	
 ----- Configuration Details ------
 -----------------------------------
-	(Can use these approaches to change settings: MLPLProperties.txt, Environment variables, or change in ConfigPipeLineSettings.java) 
+	(Can use any of these approaches to change settings: MLPLProperties.txt, Environment variables, or change in ConfigPipeLineSettings.java) 
 
 	Properties File <path>/config/MLPLProperties.txt : 
 	 ROWS=1212
