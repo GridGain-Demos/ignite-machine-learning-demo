@@ -49,7 +49,7 @@ mvn exec:java -Dexec.mainClass="org.gridgain.demo.interactive.<java file you wan
 
 # To run
 
-0. delete the <fileprefix>-interactive-status.txt file if you don't want to keep it growing with each run
+0. delete the {your file prefix}-interactive-status.txt file if you don't want to keep it growing with each run (it uses file append mode)
  
 1. Step0RunTestCacheNode.java  -> start the test cache server in IDE (one or more) if you don't have cache servers up already
 
@@ -87,37 +87,36 @@ NOTE: the same datagenerator is used to create the "live" transactions, so the l
 4. A process compares the Actuals to the Predictions and if a target MAE (mean absolute error) is exceeded, will trigger an update to the Random Forest model and then point to the latest version.
 	
 
-Maven commands to manually clear out and restart:
-------
+  # Maven commands to manually clear out and restart:
+
 	cd <path>\ml-demo-interactive    { directory with pom.xml}
 	mvn clean install
 	mvn exec:java -Dexec.mainClass="org.gridgain.demo.batch.A0_Run_Steps0to5.java
 
-How to run the steps
--------------------
-	(1) programs in package "org.gridgain.demo.batch" starting with name A0* are parent programs that call the individual pipeline steps.
+  # How to run the steps
+  
+(1) programs in package "org.gridgain.demo.batch" starting with name A0* are parent programs that call the individual pipeline steps.
+	
+  A0ExecSteps0_5.java 
+  -----------------
+  calls Steps0-5 to start cache server first, then on to generate synthetic data, preprocess, train, and then do  predictions
+	
+  A0ExecSteps1_5.java 
+  -----------------
+  assumes you have already started cache cluster, so no cache server started. Moves directly to generate does synthetic data, preprocess, train, then do  predictions
+	
 	
 
-	 	A0ExecSteps0_5.java 
-	 	-----------------
-	 	calls Steps0-5 to start cache server, generate synthetic data, preprocess, train, then do  predictions
-	
-		 A0ExecSteps1_5.java 
-	 	-----------------
-	 	assumes you have already started cache cluster, then generate does synthetic data, preprocess, train, then do  predictions
-	
-	
 
+(2) Optional Thin client UI
 
-	(2) Optional Thin client UI
+	Step9RemoteUI.java
+	-----------------------
+	optional thin client connect to cache when done to see # entries. Edit if you want to connect remotely to Kubernetes cluster, right now it connects to localhost
 
-		Step9RemoteUI.java
-		-----------------------
-		optional thin client connect to cache when done to see # entries. Edit if you want to connect remotely to Kubernetes cluster, right now localhost
+(3) Step0RunTestCacheNode  is the test server
 
-	(3) Step0RunTestCacheNode  is the test server
-
-		not used when you already have started cache servers externally
+	(not used when you already have started cache servers externally)
 	
 # Configuration Details (for both batch and interactive projects)
 (Can use any of these approaches to change settings: MLPLProperties.txt, Environment variables, or change in ConfigPipeLineSettings.java) 
