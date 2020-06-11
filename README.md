@@ -116,11 +116,10 @@ How to run the steps
 
 		not used when you already have started cache servers externally
 	
------ Configuration Details ------
------------------------------------
-	(Can use any of these approaches to change settings: MLPLProperties.txt, Environment variables, or change in ConfigPipeLineSettings.java) 
+# Configuration Details (for both batch and interactive projects)
+(Can use any of these approaches to change settings: MLPLProperties.txt, Environment variables, or change in ConfigPipeLineSettings.java) 
 
-	Properties File <path>/config/MLPLProperties.txt : 
+  Properties File <path>/config/MLPLProperties.txt : 
 	 ROWS=1212
 	 CONFIG_FILE=ignite-client.xml
 	 DATA_SPLIT=0.78
@@ -129,7 +128,7 @@ How to run the steps
 	 FILEPREFIX=200608-5-23
 
 
-	Environment  variables :  
+  Environment  variables :  
 		CONFIG_FILE=ignite-client.xml <only used for local test, blank otherwise>
 		ROWS=1234  <data rows to be generated, if not set then default used>
 		DATA_SPLIT=.75   <if not set then default used, has to be >0.0 AND <1.0>
