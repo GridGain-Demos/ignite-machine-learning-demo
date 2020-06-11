@@ -1,5 +1,8 @@
 # Overview of the  [org.gridgain.demo.batch] package
 -------------------------
+
+Business Use case: CLaims data transactions (simulated to model "typical" healthcare payers input fields) each require a monetary value be calculated for each claims transaction so that those with the highest expected value (most likely to obtain desired financial reimbursement in a timely manner) can be prioritized in the workflow processing queue according to highest value to lowest value. The data generated makes use of a statistical regression algorithm in order to simulate large datasets being processed in parallel on the Apache Ignite cluster. 
+
 The code in this package runs the entire RandomForest pipeline in one straight-through process batch run. It performs these steps in order
 
 0. "Step0" just starts an optional cache server node if you want to run inside your IDE for example. 
