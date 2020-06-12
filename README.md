@@ -2,12 +2,10 @@
 A set of examples demonstrating Ignite Machine Learning capabilities. 
 
 # Business Use Case
-Claims data transactions (simulated to model "typical" healthcare payers input fields) each require an expected monetary 
-value be calculated for each claims transaction. The value is based on reimbursement amount plus the expected likelihood 
-of obtaining that reimbursement amount in a timely manner. For an example of how the predicted monetary value could be
-used, an example would be that the claims could be prioritized in a back end claims adjustment workflow, so that the 
-most valuable claims from a reimbursement view point could be procesed more quickly. In this way the maximum financial
-value could be obtained from the claims adjudication process. The simulated claims training data, which can generated 
+In most claims processing applications, each claim is submitted after some sort of service is provided. The reason for this is that in many applications, such as healthcare, a service is provided first and then afterwards some kind of payment (reimbursement) is expected. Claims processing is usually a high volume operations so the un-reimbursed claims arrive in large batches; from a workflow management perspective, the process can better capture the most value sooner if it is able sort out the "higher value" claims from the "lower value claims so that the former are processed sooner. This highest/medium/lowest value segmentation is a statistical output (based on reimbursement amount + plus the expected likelihood of obtaining that reimbursement amount in a timely manner) and can be estimated from the input fields of each transaction, if the input fields are properly selected and formatted. In this way the maximum financial
+value could be obtained from the claims adjudication process. 
+
+In this demo, we use simulated claims training data, with inputs and statistically genereated labels. These can generated 
 in bulk (you can set the # of records to create benchmarking jobs that run on Apache Ignite clusters), makes use of a 
 statistical regression algorithm in order to (A) simulate a Random Forest parallel preprocessing and training workload,
 and then (B) make use of the trained Random Forest model decision tree to return the expected value of new transaction
