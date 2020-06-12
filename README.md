@@ -53,22 +53,22 @@ NOTE: this code will output a single large status file with all of the steps and
 can be specified in the [config/MLPLProperties.txt] file
 
 
-0. [ Step0RunTestCacheNode.java ] You manually start this node as an optional cache server node if you want to run 
+0. `Step0RunTestCacheNode.java` You manually start this node as an optional cache server node if you want to run 
 inside your IDE for example. You may want to run this this when you want to test out the ML pipeline within your IDE, 
 and don't have access to an existing cache cluster in which to deploy your training dataset.
 
-1. [ Step1DataProviderNode.java ] You manually starts one instance (only one) to perform the data generation steps. 
+1. `Step1DataProviderNode.java` You manually starts one instance (only one) to perform the data generation steps. 
 No CSV files are output, just send the data to cache. No data generation will be performed until the applicable method 
 is called on the contained ServiceGrid proxy for data generation services, when you run [A0_Build_Model.java]
 
-2. [ Step2RFModelNote.java ]This node is run just once to perform preprocessing and training on the training dataset, 
+2. `Step2RFModelNote.java` This node is run just once to perform preprocessing and training on the training dataset, 
 that will be performed on demand via the Data provider. No preprocessing or training will be performed until the 
 applicable operations are called on the Service Grid proxy for Model services, when you run [A0_Build_Model.java]
 
-3. [A0_Biuld_Model.java] You run this when the steps0-2 are up and running; at this time this code acts as an 
+3. `A0_Biuld_Model.java` You run this when the steps0-2 are up and running; at this time this code acts as an 
 orchestrator that calls services for data generation and model building (preprocessing and training)
 
-4. [A1_Perform_Predictions.java] When A0_build model has run and the model service is ready, now you run this to 
+4. `A1_Perform_Predictions.java` When A0_build model has run and the model service is ready, now you run this to 
 first get some new synthetic transactions (schema of the transactions is defined in the data provider service. 
 
 NOTE: These are not real transactions coming from an actual client system, rather they are simulated, and have the 
