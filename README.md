@@ -39,9 +39,9 @@ NOTE: These are not real transactions coming from an actual client system, rathe
 
 # maven commands to clear out and restart:
 
-cd <path>\ml-demo-interactive    { with pom.xml}
-mvn clean install
-mvn exec:java -Dexec.mainClass="org.gridgain.demo.interactive.<java file you want to run> - there are 3 services and 2 programs you need to run, see below "To Run" instructions
+1.cd <path>\ml-demo-interactive    { with pom.xml}
+2.mvn clean install
+3.mvn exec:java -Dexec.mainClass="org.gridgain.demo.interactive.<java file you want to run> - there are 3 services and 2 programs you need to run, see below "To Run" instructions
 
 # To run
 
@@ -85,9 +85,9 @@ NOTE: the same datagenerator is used to create the "live" transactions, so the l
 
   # Maven commands to manually clear out and restart:
 
-	cd <path>\ml-demo-interactive    { directory with pom.xml}
-	mvn clean install
-	mvn exec:java -Dexec.mainClass="org.gridgain.demo.batch.A0_Run_Steps0to5.java
+	1. cd <path>\ml-demo-interactive    { i.e. the directory with pom.xml}
+	2. mvn clean install
+	3. mvn exec:java -Dexec.mainClass="org.gridgain.demo.batch.A0_Run_Steps0to5.java
 
   # How to run the steps
   
