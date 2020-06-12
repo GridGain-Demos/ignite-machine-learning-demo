@@ -24,7 +24,7 @@ The code in this package runs the ML Pipeline in data generation and Model build
 NOTE: this code will output a single large status file with all of the steps and timestamps saved. The file prefix can be specified in the [config/MLPLProperties.txt] file
 
 
-0. [ Step0RunTestCacheNode.java ] You manually start this node as an optional cache server node if you want to run inside your IDE for example. You need this if you do ont have cache servers in the cluster.
+0. [ Step0RunTestCacheNode.java ] You manually start this node as an optional cache server node if you want to run inside your IDE for example. You may want to run this this when you want to test out the ML pipeline within your IDE, and don't have access to an existing cache cluster in which to deploy your training dataset.
 
 1. [ Step1DataProviderNode.java ] You manually starts one instance (only one) to perform the data generation steps. No CSV files are output, just send the data to cache. No data generation will be performed until the applicable method is called on the contained ServiceGrid proxy for data generation services, when you run [A0_Build_Model.java]
 
