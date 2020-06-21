@@ -4,7 +4,7 @@ A set of examples demonstrating Ignite Machine Learning capabilities.
 # Business Use Case
 In most insurance claims processing applications, each claim is submitted after some sort of service is provided. The reason for this is that in many verticals, such as healthcare, a service is provided first and then afterwards some kind of payment (reimbursement) is expected for which the claim transaction is the information format. Claims processing is usually a high volume operations so the un-reimbursed claims arrive in large batches; from a workflow management perspective, the claims processes can better capture the most value sooner if they are able sort out the "higher value" claims and priortize them for sooner processing before "lower value" claims. This "highest/medium/lowest" value segmentation can be calculated as a statistical output, based on reimbursement amount + plus the expected likelihood of obtaining that reimbursement amount in a timely manner. This output value segmentation can be estimated from the input fields of each transaction, if the input fields are properly selected and formatted. In this use case, historical claims data with the input values and the actual value of the claim that was reimbursed can be used, with ML processing, to predict the expected value of new incoming claims, and the claims can be priorized for attention by the staff in the order of financial value (again think of this as the maximum amount expected in the shortest time) of each claims. In this way the maximum financial value could be obtained from the claims adjudication process. 
 
-In this demo, we use simulated health claims training data, with inputs and statistically generated output values (Dollars as the labels). These can generated in bulk (you can set the # of records to create benchmarking jobs that run on Apache Ignite clusters), makes use of a statistical regression algorithm in order to (A) simulate a Random Forest parallel preprocessing and training workload,
+In this demo, we use simulated health claims training data, with inputs and statistically generated output values (dollar amounts as the labels). These can generated in bulk (you can set the # of records to create benchmarking jobs that run on Apache Ignite clusters), makes use of a statistical regression algorithm in order to (A) simulate a Random Forest parallel preprocessing and training workload,
 and then (B) make use of the trained Random Forest model decision tree to return the expected value of new transaction
 in realtime as the transaction arrives.
 
@@ -14,15 +14,11 @@ If you've worked before with ML training and preprocessing, you know that prepro
 a highly iterative process. This demo package makes lots of (over) simplifying assumptions about the training and 
 evaluation process, and so focuses more on an example of how the various Apache Ignite ML components can be orchestrated
 together as key members of a more comprehensive enterprise ML ecosystem. For example, training takes lots of data, and 
-the 1000 or so records that we use here as a default (in order to more quickly run the training stage) would normally
-need a lot more training data. In addition, the code shows how to do predictions, evaluation of prediction accuracy, 
-and even retraining of a model but in the real world the evaluation and retraining would take a lot more "think time"
-and detailed evaluation by a data science team. The best way to think about Apache Ignite is as the high performance
-massively processing platform, or "ML pipeline chassis" if you will, that works with, and greatly accelerates, 
-some of the time consuming aspects of Data science workflows by providing massively parallel preprocessing,
-training, and predictive transaction processing to the current ecosystem of "ML Ops" workbenches and user-oriented 
-analytics tools. For example, Gridgain offers a Python package that, used in conjunction with Apache Ignite ML 
-libraries and cache servers, can speed up the manual data analysis that needs to be performed in between the ML pipeline steps. 
+the 1000 or so records that we use here as a default (in order to more quickly run the training stage on a laptop) would normally
+need a lot more training data. If you have a cluster of machines you can set the amount of rows for the training data to be much larger. In addition, the code shows the Apache Ignite classes to use for predictions, evaluation of prediction accuracy, 
+and even retraining of a model, but in the real world the evaluation and retraining would take a lot more "think time"
+and detailed evaluation by a data science team, using data discovery tools with a suitable UI and static analysis tools such as those from the Python ecosystem. The best way to think about Apache Ignite is as the high performance, 
+massively processing platform (an "ML pipeline chassis" if you will) that works underneath 3rd party AutoML workflow tools to greatly accelerate ML workflows by providing massively parallel preprocessing. Apache Ignite ML provides the parallel processing on large clusters to speed up preprocessing, training, and predictive transaction processing.
 
 There are 2 packages:
 
