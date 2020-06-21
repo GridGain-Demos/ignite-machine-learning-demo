@@ -17,8 +17,9 @@ together as key members of a more comprehensive enterprise ML ecosystem. For exa
 the 1000 or so records that we use here as a default (in order to more quickly run the training stage on a laptop) would normally
 need a lot more training data. If you have a cluster of machines you can set the amount of rows for the training data to be much larger. In addition, the code shows the Apache Ignite classes to use for predictions, evaluation of prediction accuracy, 
 and even retraining of a model, but in the real world the evaluation and retraining would take a lot more "think time"
-and detailed evaluation by a data science team, using data discovery tools with a suitable UI and static analysis tools such as those from the Python ecosystem. The best way to think about Apache Ignite is as the high performance, 
-massively processing platform (an "ML pipeline chassis" if you will) that works underneath 3rd party AutoML workflow tools to greatly accelerate ML workflows by providing massively parallel preprocessing. Apache Ignite ML provides the parallel processing on large clusters to speed up preprocessing, training, and predictive transaction processing.
+and detailed evaluation by a data science team, using data discovery tools with a suitable UI and static analysis tools such as those from the large Python ecosystem for data science (take a look at this toolset from Gridgain as one example: https://www.gridgain.com/docs/latest/getting-started/quick-start/python ). 
+
+The best way to think about Apache Ignite ML library is as the high performance, massively processing platform (an "ML pipeline chassis" if you will) that works underneath 3rd party AutoML workflow tools to greatly accelerate ML workflows by providing massively parallel preprocessing. Apache Ignite ML provides the parallel processing on large clusters to speed up preprocessing, training, and predictive transaction processing.
 
 There are 2 packages:
 
